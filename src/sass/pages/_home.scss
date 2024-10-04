@@ -1,0 +1,92 @@
+/*--------------------------------
+bg-scroll-fixed-for-pc
+---------------------------------*/
+img {
+  max-width: 100%;
+  vertical-align: bottom;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  flex: none;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  height: 100%;
+  justify-content: space-between;
+  overflow-x: auto;
+  overflow-y: hidden;
+  width: 100%;
+  max-width: 100%;
+
+  
+  &::before {
+    background-color: yellow;
+    content: "";
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    z-index: -2;
+  }
+  
+  @media screen and (max-width: 840px) {
+    justify-content: center;
+  }
+}
+
+.left, .right {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  flex: 1;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  height: 100vh;
+  justify-content: center;
+  padding: 0px 30px;
+  width: auto;
+  max-width: 100%;
+  
+  @media screen and (max-width: 840px) {
+    display: none;
+  }
+}
+
+.left {
+  background-color: blue;
+}
+
+.right {
+  background-color: red;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  flex: none;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  height: 100vh;
+  justify-content: flex-start;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 0px 0px 0px 0px;
+  width: 600px;
+  max-width: 100%;
+  background-color: gray;
+
+  &__text {
+    margin-top: 40px;
+    font-size: 42px;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  &__img {
+    margin-top: 100px;
+  }
+}
+
